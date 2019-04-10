@@ -1,4 +1,5 @@
-﻿(function () {
+﻿//testttttttttttttttttttttttttttttttttttttttttttttttttttt okay
+(function () {
     var customerservice = function ($http) {
                 var addcustomers = function (customer) {
    
