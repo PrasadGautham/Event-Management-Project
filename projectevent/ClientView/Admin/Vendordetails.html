@@ -1,0 +1,79 @@
+﻿
+
+<br /><br /><br />
+
+
+
+
+
+
+<div>
+    <table id="simple-table" class="table table-striped table-bordered table-hover">
+
+
+
+        <tr>
+            <th>
+                VendorID &nbsp; &nbsp; &nbsp;
+
+            </th>
+            <th>
+                First Name&nbsp; &nbsp; &nbsp;
+            </th>
+            <th>
+                Last Name &nbsp; &nbsp; &nbsp;
+
+
+            </th>
+            <th>
+                Category &nbsp; &nbsp; &nbsp;
+
+            </th>
+            <th>
+                Address &nbsp;  &nbsp; &nbsp;
+
+
+
+            </th>
+            <th>
+                Contact No &nbsp; &nbsp; &nbsp;
+
+
+
+            </th>
+            <th>
+                Vendor status &nbsp; &nbsp; &nbsp;
+
+
+
+            </th>
+            <th>
+                UserName &nbsp; &nbsp; &nbsp;
+
+
+
+            </th>
+        </tr>
+
+
+        <tbody>
+
+            <tr ng-repeat="a in Vendors">
+                <td><span ng-bind="a.vendorID"></span></td>
+                <td><span ng-bind="a.vendor_Fname"></span></td>
+                <td><span ng-bind="a.vendor_Lname"></span></td>
+                <td><span ng-bind="a.vendor_category"></span></td>
+                <td><span ng-bind="a.vendor_address"></span></td>
+                <td><span ng-bind="a.vendor_phone"></span></td>
+                <td><span ng-bind="a.vendor_status"></span></td>
+                <td><span ng-bind="a.vendor_username"></span></td>
+
+                <td><input type="button" value="Accept" ng-click="acceptvendors(a.vendorID)" ng-hide="acceptkeyvisibleornot(a.vendor_status)"></td>
+                <td><input type="button" value="Remove" ng-click="deletevendors(a.vendorID)"></td>
+
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+

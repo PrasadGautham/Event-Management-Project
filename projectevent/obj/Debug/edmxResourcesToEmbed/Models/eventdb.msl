@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="eventDBModelStoreContainer" CdmEntityContainer="eventDBEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="eventDBModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="eventDBModel.Admin">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="agents">
+      <EntityTypeMapping TypeName="eventDBModel.agent">
+        <MappingFragment StoreEntitySet="agents">
+          <ScalarProperty Name="agentID" ColumnName="agentID" />
+          <ScalarProperty Name="agent_name" ColumnName="agent_name" />
+          <ScalarProperty Name="agent_email" ColumnName="agent_email" />
+          <ScalarProperty Name="agent_phone" ColumnName="agent_phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="albums">
+      <EntityTypeMapping TypeName="eventDBModel.album">
+        <MappingFragment StoreEntitySet="albums">
+          <ScalarProperty Name="albumsID" ColumnName="albumsID" />
+          <ScalarProperty Name="images" ColumnName="images" />
+          <ScalarProperty Name="vendorID" ColumnName="vendorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bookedvenues">
+      <EntityTypeMapping TypeName="eventDBModel.bookedvenue">
+        <MappingFragment StoreEntitySet="bookedvenues">
+          <ScalarProperty Name="bookedvenueID" ColumnName="bookedvenueID" />
+          <ScalarProperty Name="bookeddate" ColumnName="bookeddate" />
+          <ScalarProperty Name="bookingstatus" ColumnName="bookingstatus" />
+          <ScalarProperty Name="bookedfoodtype" ColumnName="bookedfoodtype" />
+          <ScalarProperty Name="venueID" ColumnName="venueID" />
+          <ScalarProperty Name="customerID" ColumnName="customerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="eventDBModel.customer">
+        <MappingFragment StoreEntitySet="customers">
+          <ScalarProperty Name="customerID" ColumnName="customerID" />
+          <ScalarProperty Name="customer_Fname" ColumnName="customer_Fname" />
+          <ScalarProperty Name="customer_Lname" ColumnName="customer_Lname" />
+          <ScalarProperty Name="customer_address" ColumnName="customer_address" />
+          <ScalarProperty Name="customer_phone" ColumnName="customer_phone" />
+          <ScalarProperty Name="customer_username" ColumnName="customer_username" />
+          <ScalarProperty Name="customer_password" ColumnName="customer_password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodItems">
+      <EntityTypeMapping TypeName="eventDBModel.FoodItem">
+        <MappingFragment StoreEntitySet="FoodItems">
+          <ScalarProperty Name="FoodItemsID" ColumnName="FoodItemsID" />
+          <ScalarProperty Name="Foodtype" ColumnName="Foodtype" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="payments">
+      <EntityTypeMapping TypeName="eventDBModel.payment">
+        <MappingFragment StoreEntitySet="payments">
+          <ScalarProperty Name="paymentID" ColumnName="paymentID" />
+          <ScalarProperty Name="payment_date" ColumnName="payment_date" />
+          <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+          <ScalarProperty Name="customerID" ColumnName="customerID" />
+          <ScalarProperty Name="venueID" ColumnName="venueID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="photographies">
+      <EntityTypeMapping TypeName="eventDBModel.photography">
+        <MappingFragment StoreEntitySet="photographies">
+          <ScalarProperty Name="photographyID" ColumnName="photographyID" />
+          <ScalarProperty Name="photographer_name" ColumnName="photographer_name" />
+          <ScalarProperty Name="photographer_phone" ColumnName="photographer_phone" />
+          <ScalarProperty Name="photographer_cost" ColumnName="photographer_cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reviews">
+      <EntityTypeMapping TypeName="eventDBModel.review">
+        <MappingFragment StoreEntitySet="reviews">
+          <ScalarProperty Name="reviewID" ColumnName="reviewID" />
+          <ScalarProperty Name="review_content" ColumnName="review_content" />
+          <ScalarProperty Name="review_rating" ColumnName="review_rating" />
+          <ScalarProperty Name="customerID" ColumnName="customerID" />
+          <ScalarProperty Name="venueID" ColumnName="venueID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vendors">
+      <EntityTypeMapping TypeName="eventDBModel.vendor">
+        <MappingFragment StoreEntitySet="vendors">
+          <ScalarProperty Name="vendorID" ColumnName="vendorID" />
+          <ScalarProperty Name="vendor_Fname" ColumnName="vendor_Fname" />
+          <ScalarProperty Name="vendor_Lname" ColumnName="vendor_Lname" />
+          <ScalarProperty Name="vendor_address" ColumnName="vendor_address" />
+          <ScalarProperty Name="vendor_phone" ColumnName="vendor_phone" />
+          <ScalarProperty Name="vendor_username" ColumnName="vendor_username" />
+          <ScalarProperty Name="vendor_password" ColumnName="vendor_password" />
+          <ScalarProperty Name="vendor_category" ColumnName="vendor_category" />
+          <ScalarProperty Name="vendor_status" ColumnName="vendor_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="venues">
+      <EntityTypeMapping TypeName="eventDBModel.venue">
+        <MappingFragment StoreEntitySet="venues">
+          <ScalarProperty Name="venueID" ColumnName="venueID" />
+          <ScalarProperty Name="venue_name" ColumnName="venue_name" />
+          <ScalarProperty Name="venue_location" ColumnName="venue_location" />
+          <ScalarProperty Name="venue_address" ColumnName="venue_address" />
+          <ScalarProperty Name="venue_capacity" ColumnName="venue_capacity" />
+          <ScalarProperty Name="venue_category" ColumnName="venue_category" />
+          <ScalarProperty Name="venue_video" ColumnName="venue_video" />
+          <ScalarProperty Name="venue_status" ColumnName="venue_status" />
+          <ScalarProperty Name="venue_cost" ColumnName="venue_cost" />
+          <ScalarProperty Name="vendorID" ColumnName="vendorID" />
+          <ScalarProperty Name="agentId" ColumnName="agentId" />
+          <ScalarProperty Name="photographyId" ColumnName="photographyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

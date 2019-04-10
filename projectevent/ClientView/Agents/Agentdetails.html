@@ -1,0 +1,28 @@
+﻿<div>
+    <div>
+        <button><a href="#vendorhmpage">Back</a></button>
+
+    </div>
+    <center>
+        <div>
+            <a href="#agentadd" class="btn btn-primary">Add New Agent</a>
+        </div>
+        <div span="height=300">
+            <h1>Agent Details</h1>
+        </div>
+
+        <table border="1" span="backgroundcolor:green " cellspacing="3
+               " cellpadding="2">
+            <tr><th>Name</th><th>Email</th><th>ContactNo</th></tr>
+            <tr ng-repeat="emp in Agents">
+
+                <td><span ng-bind="emp.agent_name" style:"box-shadow"></span></td>
+                <td><span ng-bind="emp.agent_email" style:"box-shadow"></span></td>
+                <td><span ng-bind="emp.agent_phone" style:"box-shadow"></span></td>
+                <td><a href="#ModifyAgent/{{emp.agentID}}" class="btn btn-info">Edit</a></td>
+                <td><a ng-click="deleteAgent(emp.agentID)" class="btn btn-info">Delete</a></td>
+
+            </tr>
+        </table>
+    </center>
+</div>

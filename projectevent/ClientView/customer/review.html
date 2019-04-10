@@ -1,0 +1,54 @@
+﻿<div>
+    <form class="form-horizontal" name="review">
+        <div class="form-group">
+            <label class="col-lg-2 control-label">
+                Review
+            </label>
+            <div class="col-lg-10">
+                <textarea class="form-control" ng-model="review1.review_content" name="reviewtext" rows="3"></textarea>
+                <span ng-show="review.reviewtext.$dirty && review.reviewtext.$invalid">
+                    <span class="alert" ng-show="review1.reviewtext.$error.required">Text Box is Empty</span>
+                </span>
+            </div>
+            <label class="col-lg-2 control-label">
+                Rating
+            </label>
+            <div class="col-lg-10">
+                <textarea class="form-control" ng-model="review1.review_rating" name="rating" rows="3"></textarea>
+                <span ng-show="review.reviewtext.$dirty && review.reviewtext.$invalid">
+                    <span class="alert" ng-show="review1.reviewtext.$error.required">Text Box is Empty</span>
+                </span>
+            </div>
+            <label class="col-lg-2 control-label">
+                CustomerID
+            </label>
+            <div class="col-lg-10">
+                <textarea class="form-control" ng-model="review1.customerID" name="custID" rows="3"></textarea>
+                <span ng-show="review.reviewtext.$dirty && review.reviewtext.$invalid">
+                    <span class="alert" ng-show="review1.reviewtext.$error.required">Text Box is Empty</span>
+                </span>
+            </div>
+            <label class="col-lg-2 control-label">
+                VenueID
+            </label>
+            <div class="col-lg-10">
+                <textarea class="form-control" ng-model="review1.venueID" name="venID" rows="3"></textarea>
+                <span ng-show="review.reviewtext.$dirty && review.reviewtext.$invalid">
+                    <span class="alert" ng-show="review1.reviewtext.$error.required">Text Box is Empty</span>
+                </span>
+            </div>
+            <div class="form-group">
+
+                <div>
+                    <a class="btn btn-default">Cancel</a>
+                    <a class="btn btn-primary" ng-click="addreview(review1)">Comment</a>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </form>
+</div>

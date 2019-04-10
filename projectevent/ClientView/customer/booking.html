@@ -1,0 +1,65 @@
+﻿<div>
+    <br/>
+    <br/>
+
+   <u> <h2 class="col-lg-2"> Login Now<h2></u>
+    <form class="form-horizontal" name="booking">
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Username</label>
+            <div class="col-lg-10">
+                <input type="text" name="EmpName" ng-model="rrr" required class="form-control" placeholder="Username" />
+                <span ng-show="(AddEmployee.EmpName.$dirty && AddEmployee.EmpName.$invalid)">
+                    <span class="alert-danger" ng-show="AddEmployee.EmpName.$error.required">
+                       customer name Name Required
+                    </span>
+                </span>
+            </div>
+        </div>
+        
+        
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Password</label>
+            <div class="col-lg-10">
+                <input type="text" name="EmpName" ng-model="employee.EmployeeName" required class="form-control" placeholder="Password" />
+                <span ng-show="(AddEmployee.EmpName.$dirty && AddEmployee.EmpName.$invalid)">
+                    <span class="alert-danger" ng-show="AddEmployee.EmpName.$error.required">
+                        customer name Name Required
+                    </span>
+                </span>
+            </div>
+        </div>
+        
+       
+       
+        <div class="form-group">
+            <div>
+            
+                <a class="btn btn-primary" href="#book" ng-click="ADD(employee)">Login Now</a>
+            </div>
+        </div>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+</div>

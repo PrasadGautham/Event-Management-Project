@@ -1,0 +1,45 @@
+﻿#main {
+  width:900px;
+  height:auto;
+  border:groove;
+  background-color:black;
+  margin-top:10px;
+  margin-left:100px;
+  color:white;
+  
+  
+
+}
+.sub {
+    border:groove;
+    background-color:white;
+    width:890px;
+    height:200px;
+    color:blueviolet;
+   
+
+}
+.image {
+    width:250px;
+    height:200px;
+    border:groove;
+    position:absolute;
+}
+.right {
+
+    float:right;
+    border:groove;
+   
+    position:relative;
+    
+}
+#text {
+    
+    float:left;
+    margin-left:400px;
+    position:relative;
+    color:darkgreen;
+}
+#date {
+visibility:hidden;
+}

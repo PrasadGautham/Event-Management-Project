@@ -1,0 +1,101 @@
+﻿<div>
+   <br />
+  <b >BOOKINGS MADE</b> 
+    <br />
+    <table id="simple-table" class="table table-striped table-bordered table-hover">
+
+
+        <tr>
+            <th>
+                <br />
+                ID &nbsp; &nbsp; &nbsp;
+
+            </th>
+            <th>
+                <br />
+                Customer Name &nbsp; &nbsp; &nbsp;
+
+            </th>
+            <th>
+                <br />
+                LastName&nbsp; &nbsp; &nbsp;
+            </th>
+            <th>
+                <br />
+                Address &nbsp; &nbsp; &nbsp;
+
+
+            </th>
+            <th>
+                <br />
+                PhoneNo. &nbsp; &nbsp; &nbsp;
+
+            </th>
+
+            <th>
+                <br />
+                Venue Name &nbsp; &nbsp; &nbsp;
+
+
+
+            </th>
+            <th>
+                <br />
+                Venue Category &nbsp; &nbsp; &nbsp;
+
+
+
+            </th>
+            <th>
+                <br />
+                Booked Date &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+            </th>
+            <th>
+                <br />
+                Agent Name &nbsp; &nbsp; &nbsp;
+
+
+            </th>
+            <th>
+                <br />
+                Agent Email &nbsp; &nbsp; &nbsp;
+
+
+
+            </th>
+            <th>
+                <br />
+                Book Status&nbsp; &nbsp; &nbsp;
+
+
+
+            </th>
+
+
+
+        </tr>
+        <tr ng-repeat="a in alldetails">
+
+            <td><span ng-bind="a.bookedvenueID"></span></td>
+            <td><span ng-bind="a.customer_Fname"></span></td>
+            <td><span ng-bind="a.customer_Lname"></span></td>
+            <td><span ng-bind="a.customer_address"></span></td>
+            <td><span ng-bind="a.customer_phone"></span></td>
+            <td><span ng-bind="a.venue_name"></span></td>
+            <td><span ng-bind="a.venue_category"></span></td>
+            <td><span ng-bind="a.bookeddate"></span></td>
+            <td><span ng-bind="a.agent_name"></span></td>
+            <td><span ng-bind="a.agent_email"></span></td>
+
+            <td><span ng-bind="a.bookingstatus"></span></td>
+
+
+            <td><input type="button" value="Notify Agent" ng-hide="acceptkeyvisibleornot(a.bookingstatus)" ng-click="acceptbook(a.bookedvenueID)"></td>
+
+
+        </tr>
+    </table>
+</div>

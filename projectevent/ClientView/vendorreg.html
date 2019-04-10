@@ -1,0 +1,103 @@
+﻿<div>
+    <form class="form-horizontal" name="addvendor">
+        <h1>VENDOR REGISTRATION</h1>
+        <div class="form-group">
+
+            <label class="col-lg-2 control-label">vendor firstname</label>
+            <div class="col-lg-10">
+                <input type="text" name="vendorfname" ng-model="vendor.vendor_Fname" required class="form-control" placeholder="firstname" />
+                <span ng-show="(addvendor.vendorfname.$dirty && addvendor.vendorfname.$invalid)">
+                    <span class="alert-danger" ng-show="addvendor.vendorfname.$error.required">vendor firstname is required</span>
+                </span>
+            </div>
+
+        </div>
+        <div class="form-group">
+
+            <label class="col-lg-2 control-label">vendor lastname</label>
+            <div class="col-lg-10">
+                <input type="text" name="vendorlname" ng-model="vendor.vendor_Lname" required class="form-control" placeholder="lastname" />
+                <span ng-show="(addvendor.vendorlname.$dirty && addvendor.vendorlname.$invalid)">
+                    <span class="alert-danger" ng-show="addvendor.vendorlname.$error.required"> vendor lastname is required</span>
+                </span>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">address</label>
+            <div class="col-lg-10"><input type="text" name="addr" class="form-control" ng-model="vendor.vendor_address" required placeholder="addr" /></div>
+
+            <span ng-show=""></span>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">contactno</label>
+            <div class="col-lg-10">
+                <input type="text" name="phone" class="form-control" ng-model="vendor.vendor_phone" required placeholder="phone" />
+                <span ng-show="(addvendor.phone.$dirty && addvendor.phone.$invalid)">
+                    <span class="alert-danger" ng-show="addvendor.phone.$error.required">
+                        contact no. is required
+                    </span>
+                </span>
+            </div>
+
+            <span ng-show=""></span>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">username</label>
+            <div class="col-lg-10">
+                <input type="text" name="username" class="form-control" ng-model="vendor.vendor_username" required placeholder="password" />
+                <span ng-show="(addvendor.username.$dirty && addvendor.username.$invalid)">
+                    <span class="alert-danger" ng-show="addvendor.username.$error.required">
+                        username is required
+                    </span>
+                </span>
+            </div>
+            <span ng-show=""></span>
+            </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">password</label>
+            <div class="col-lg-10">
+                <input type="text" name="password" class="form-control" ng-model="vendor.vendor_password" required placeholder="username" />
+                <span ng-show="(addvendor.password.$dirty && addvendor.password.$invalid)">
+                    <span class="alert-danger" ng-show="addvendor.password.$error.required">
+                        password is required
+                    </span>
+                </span>
+            </div>
+
+            <span ng-show=""></span>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">category</label>
+            <div class="col-lg-10">
+                <input type="text" name="category" class="form-control" ng-model="vendor.vendor_category" required placeholder="category" />
+                <span ng-show="(addvendor.category.$dirty && addvendor.category.$invalid)">
+                    <span class="alert-danger" ng-show="addvendor.category.$error.required">
+                        username is required
+                    </span>
+                </span>
+            </div>
+
+            <span ng-show=""></span>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">status</label>
+            <div class="col-lg-10">
+                <input type="text" name="status" class="form-control" ng-model="vendor.vendor_status" required placeholder="status" />
+                <span ng-show="(addvendor.status.$dirty && addvendor.status.$invalid)">
+                    <span class="alert-danger" ng-show="addvendor.status.$error.required">
+                        status is required
+                    </span>
+                </span>
+            </div>
+
+            <span ng-show=""></span>
+        </div>
+           
+            <div class="form-group">
+
+                <a class="btn btn-primary" ng-hide="" ng-click="RegisterVendor(vendor)">submit</a>
+            </div>
+    </form>
+</div>

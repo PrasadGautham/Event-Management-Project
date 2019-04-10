@@ -1,0 +1,115 @@
+﻿
+   <link href="../../Content/StyleSheet1.css" rel="stylesheet" />
+
+
+
+   <div style="padding-top:20px">
+       
+        <!--<table border="1">
+            <tr ng-repeat="ven in venue">
+
+                <td rowspan="4" width="300" height="300"><img ng-src="{{ven.venue_image}}"></td>
+                <td>{{ven.venuename}}</td>
+                <td>{{ven.venuename}}</td>
+                <td>{{ven.venuename}}</td>
+                <td>{{ven.venuename}}</td>
+
+
+            </tr>
+        </table>-->
+
+
+           <br/><br/>
+        <!--<table>
+            <tbody ng-repeat="ven in venue">
+                <tr>
+                    <td>{{ven.venuename}}</td>
+
+                    <td rowspan="4" width="500" height="500"><img width="200" height="140" ng-src={{ven.venue_image}}.jpg></td>
+                </tr>
+                <tr><td>{{ven.venuename}}</td>
+
+                </tr>
+                <tr>
+                    <td>{{ven.venuename}}</td>
+
+                </tr>
+
+                <tr>
+                    <td>{{ven.venuename}}</td>
+
+                </tr>
+            </tbody>
+        </table>-->
+           <div id="main" ng-hide="ast()">
+               <center>
+                   <input type="text" ng-model="search.venue_location" placeholder="filter by location">
+                   <br />
+                   <h3>Event Venues</h3>
+               </center>
+               <div class="sub" ng-repeat="ven in venue|filter:search">
+
+                   <div class="image">
+                       <img width="250" height="190" ng-src={{ven.venue_image}}.jpg><br/>
+                       <!--<a href="#" class="btn btn-info"> View all images</a>-->
+
+
+
+                   </div>
+                   
+                   <p id="text">
+        Name:{{ven.venuename}}<br/>
+    Location:{{ven.venue_location}}<br/>
+    capacity:{{ven.venue_capacity}} <a style="margin-left:150px; " class="btn btn-info" href="#/review">Add Review</a> <br/>
+    category:{{ven.venue_category}}<a style="margin-left:150px;" class="btn btn-info" href="#/allreview/{{ven.venueID}}">View Reviews</a> <br/>
+    cost:{{ven.venue_cost}}<br/>
+   
+
+    <input type="text" placeholder="DD-MM-YYYY 5-25-2016" ng-model="checkdate" id="date1"/><br/>
+    <a class="btn btn-info" ng-click="validate(checkdate,ven.venueID)"> Check availablity</a>
+   
+                      
+                       
+                           
+                       
+</p>
+</div>
+</div>
+
+
+
+   <div id="main">
+
+    <br />
+ 
+       <center>
+           <h5 ng-show="abc()">BOOK NOW</h5>
+           <h3 ng-show="abc()">Available On {{name}}</h3>
+           </center>
+               <div class="sub" ng-repeat="ven in any">
+
+                   <div class="image">
+                       <img ng-init="Chrysanthemum.jpg" width="250" height="200" ng-src={{ven.venue_image}}.jpg><br />
+                       <a href="#/image" class="btn btn-info"> View all images</a>
+
+
+
+                   </div>
+
+                   <p id="text">
+                       Name:{{ven.venuename}}<br />
+                       Location:{{ven.venue_location}}<br />
+                       capacity:{{ven.venue_capacity}}<br />
+                       category:{{ven.venue_category}}<br />
+                       cost:{{ven.venue_cost}}<br />
+                       <br/>
+
+
+                       <a href="#/venuebook" class=" btn btn-info"> Book Now</a>
+
+
+                   </p>
+               </div>
+</div>     
+       
+</div>

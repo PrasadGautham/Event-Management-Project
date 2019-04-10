@@ -1,0 +1,27 @@
+﻿<div>
+    <center>
+        <div span="height=300">
+            <h1>Venue Details</h1>
+        </div>
+
+        <table border="1" span="backgroundcolor:green " cellspacing="3
+               " cellpadding="2">
+            <tr><th>Name</th><th>Location</th><th>Address</th><th>Capacity</th><th>Category</th><th>Status</th><th>Cost</th><th>Photographer name</th><th>Agent name</th></tr>
+            <tr ng-repeat="v in Venues">
+
+                <td><span ng-bind="v.venue_name " style:"box-shadow"></span></td>
+                <td><span ng-bind="v.venue_location" style:"box-shadow"></span></td>
+                <td><span ng-bind="v.venue_address" style:"box-shadow"></span></td>
+                <td><span ng-bind="v.venue_capacity" style:"box-shadow"></span></td>
+                <td><span ng-bind="v.venue_category" style:"box-shadow"></span></td>
+                <td><span ng-bind="v.venue_status" style:"box-shadow"></span></td>
+                <td><span ng-bind="v.venue_cost" style:"box-shadow"></span></td>
+                <td><span ng-bind="v.photographer_name" style:"box-shadow"></span></td>
+                <td><span ng-bind="v.agent_name" style:"box-shadow"></span></td>
+                <td><a href="#ModifyVenue/{{v.venueID}}" class="btn btn-info">Edit</a></td>
+                
+
+            </tr>
+        </table>
+    </center>
+</div>

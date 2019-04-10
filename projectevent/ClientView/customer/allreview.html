@@ -1,0 +1,34 @@
+﻿
+<h3 class="a-spacing-small">Top Customer Reviews</h3>
+<div ng-repeat="r in Review">
+    <br />
+
+    <div class="a-section">
+
+
+        <div class="a-section celwidget">
+            <div class="a-row a-spacing-micro">
+                <div class="a-icon-row a-spacing-none">
+                    <a class="a-link-normal a-text-normal a-color-base">
+                        </a><span class="a-letter-space"></span>
+                                           <span class="a-size-base a-text-bold">
+                            <span ng-bind="r.review_content"></span>;&nbsp;&nbsp;Rating provided:<span ng-bind="r.review_rating">&nbsp;&nbsp;&nbsp;</span>
+                        </span>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <span class="a-size-normal">
+       
+         By <span ng-bind="r.customer_username"></span>
+    </span>
+
+  
+
+</div>
+
+
+

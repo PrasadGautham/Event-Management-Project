@@ -1,0 +1,138 @@
+﻿<div>
+    <form class="form-horizontal" name="EditVenue" ng-init="init()">
+        
+        <div class="form-group">
+            <label class="col-lg-2 control-label"> Venue Name</label>
+            <div class="col-lg-10">
+                <input type="text" name="venuename" ng-model="venue.venue_name" required class="form-control" placeholder="Enter Venue Name" />
+                <span ng-show="(EditVenue.venuename.$dirty && EditVenue.venuename.$invalid)">
+                    <span class="alert-danger" ng-show="EditVenue.venuename.$error.required">
+                        Venue Name is required
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label"> Venue Location</label>
+            <div class="col-lg-10">
+                <input type="text" name="venuelocation" ng-model="venue.venue_location" required class="form-control" placeholder="Enter Venue Location" />
+                <span ng-show="(EditVenue.venuelocation.$dirty && EditVenue.venuelocation.$invalid)">
+                    <span class="alert-danger" ng-show="EditVenue.venuelocation.$error.required">
+                        Venue Location is required
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label"> Venue Address</label>
+            <div class="col-lg-10">
+                <input type="text" name="venueaddress" ng-model="venue.venue_address " required class="form-control" placeholder="Enter Venue Address" />
+                <span ng-show="(EditVenue.venueaddress.$dirty && EditVenue.venueaddress.$invalid)">
+                    <span class="alert-danger" ng-show="EditVenue.venueaddress.$error.required">
+                        Venue Address is required
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label"> Venue Capacity</label>
+            <div class="col-lg-10">
+                <input type="number" name="venuecapacity" ng-model="venue.venue_capacity " required class="form-control" placeholder="Enter Venue Capacity" />
+                <span ng-show="(EditVenue.venuecapacity.$dirty && EditVenue.venuecapacity.$invalid)">
+                    <span class="alert-danger" ng-show="EditVenue.venuecapacity.$error.required">
+                        Venue Capacity is required
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label"> Venue Category</label>
+            <div class="col-lg-10">
+                <input type="text" name="venuecategory" ng-model="venue.venue_category " required class="form-control" placeholder="Enter Venue Category" />
+                <span ng-show="(EditVenue.venuecategory.$dirty && EditVenue.venuecategory.$invalid)">
+                    <span class="alert-danger" ng-show="EditVenue.venuecategory.$error.required">
+                        Venue Category is required
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label"> Venue Status</label>
+            <div class="col-lg-10">
+                <input type="text" name="venuestatus" ng-model="venue.venue_status " required class="form-control" placeholder="Enter Venue Status" />
+                <span ng-show="(EditVenue.venuestatus.$dirty && EditVenue.venuestatus.$invalid)">
+                    <span class="alert-danger" ng-show="EditVenue.venuestatus.$error.required">
+                        Venue Status is required
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label"> Venue Cost</label>
+            <div class="col-lg-10">
+                <input type="number" name="venuecost" ng-model="venue.venue_cost " required class="form-control" placeholder="Enter Venue Cost" />
+                <span ng-show="(EditVenue.venuecost.$dirty && EditVenue.venuecost.$invalid)">
+                    <span class="alert-danger" ng-show="EditVenue.venuecost.$error.required">
+                        Venue Cost is required
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label"> Venue video</label>
+            <div class="col-lg-10">
+                <input type="text" name="venuevideo" ng-model="venue.venue_video " required class="form-control" placeholder="Load Venue video" />
+                <span ng-show="(EditVenue.venuevideo.$dirty && EditVenue.venuevideo.$invalid)">
+                    <span class="alert-danger" ng-show="EditVenue.venuevideo.$error.required">
+                        Venue video is required
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label"> Vendor ID</label>
+            <div class="col-lg-10">
+                <input type="number" name="vendorid" ng-model="venue.vendorID " required class="form-control" placeholder="Enter Vendor ID" />
+                <span ng-show="(EditVenue.vendorid.$dirty && EditVenue.vendorid.$invalid)">
+                    <span class="alert-danger" ng-show="EditVenue.vendorid.$error.required">
+                        Vendor ID is required
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label"> Agent ID</label>
+            <div class="col-lg-10">
+                <input type="text" name="agentid" ng-model="venue.agentId " required class="form-control" placeholder="Enter  Agent ID " />
+                <span ng-show="(EditVenue.agentid.$dirty && EditVenue.agentid.$invalid)">
+                    <span class="alert-danger" ng-show="EditVenue.agentid.$error.required">
+                        Agent ID is required
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label"> Photographer ID</label>
+            <div class="col-lg-10">
+                <input type="text" name="photographerid" ng-model="venue.photographyId " required class="form-control" placeholder="Enter Photographer ID " />
+                <span ng-show="(EditVenue.photographerid.$dirty && EditVenue.photographerid.$invalid)">
+                    <span class="alert-danger" ng-show="EditVenue.photographerid.$error.required">
+                        Photographer ID is required
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-default">Cancel</a>
+            <a class="btn btn-primary" ng-hide="EditVenue.venuename.$error.required" ng-click="UpdateVenue(venue)">Save</a>
+        </div>
+    </form>
+</div>
+
+
+
+
+

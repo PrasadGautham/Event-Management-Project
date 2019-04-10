@@ -1,0 +1,49 @@
+﻿<form novalidate name="f1">
+    <div style="color:rgb(142,2,2)">{{Message}}</div>
+    <div>
+        <h1>Vendor Login</h1>
+    </div>
+    <table>
+        <!-- Here  ng-show="!IsLogedIn" means I want to hide table after loged
+
+        in-->
+        <tr>
+            <td>Username : </td>
+            <td>
+
+                <!-- Here ng-class="Submitted?'ng-dirty':''" Means if submitted
+
+                (clicked submit button) then make this dirty state
+                                    for show red border-->
+                <input type="text" ng-model="username" name="username" ng-
+                       class="Submitted?'ng-dirty':''" required autofocus />
+                <span class="error" ng-show="(f1.cUsername.$dirty || Submitted)&& f1.cUsername.$error.required">Username required</span>
+
+                <!-- ng-show="(f1.cUsername.$dirty || Submitted) &&
+
+                f1.cUsername.$error.required" Means I want to show this span only when
+                                    the control cUsername is invalid-->
+            </td>
+        </tr>
+        <tr>
+            <td>Password : </td>
+            <td>
+                <input type="password" ng-model="password" name="password" ng-
+                       class="Submitted?'ng-dirty':''" required autofocus />
+                <span class="error" ng-show="(f1.cPassword.$dirty || Submitted)&& f1.cPassword.$error.required">Password required</span>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Login" ng-click="Login(username,password)" />
+            </td>
+        </tr>
+    </table>
+    <div>
+        <h1>New Vendor? Register!!</h1>
+        <div>
+            <a href="#vendoreg" class="btn btn-primary">Click to register</a>
+        </div>
+    </div>
+</form>

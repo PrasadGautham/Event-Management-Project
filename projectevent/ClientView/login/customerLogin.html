@@ -1,0 +1,53 @@
+﻿<form >
+    <style>
+        #mytab{
+            height:50px;
+            width:100px;
+            background-color:aliceblue;
+            color:black;
+        }
+        #menu{
+            font-size:30px;
+            color:black;
+            font-style:oblique;
+        }
+    </style>
+    
+    <div id="menu">{{message}}</div>
+  
+
+
+    <div id="customerlog" ng-hide="shc()">
+        <table id="mytab">
+
+            <tr>
+                <td>Username: </td>
+                <td>
+
+
+                    <input type="text" ng-model="username" name="username" ng-class="Submitted?'ng-dirty':''" required autofocus />
+                    <span class="error" ng-show="(f1.cUsername.$dirty || Submitted) && f1.cUsername.$error.required">Username required</span>
+
+
+                </td>
+            </tr>
+            <tr>
+                <td>Password: </td>
+                <td>
+                    <input type="password" ng-model="password" name="password" ng-class="Submitted?'ng-dirty':''" required autofocus />
+                    <span class="error" ng-show="(f1.cPassword.$dirty || Submitted) && f1.cPassword.$error.required">Password required</span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Login" ng-click="Login(username,password)" />
+                </td>
+            </tr>
+        </table>
+    </div>
+   
+
+</form>
+            
+

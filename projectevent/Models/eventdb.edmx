@@ -1,0 +1,839 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="eventDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Admins">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar(max)" />
+          <Property Name="password" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="agents">
+          <Key>
+            <PropertyRef Name="agentID" />
+          </Key>
+          <Property Name="agentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="agent_name" Type="nvarchar(max)" />
+          <Property Name="agent_email" Type="nvarchar(max)" />
+          <Property Name="agent_phone" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="albums">
+          <Key>
+            <PropertyRef Name="albumsID" />
+          </Key>
+          <Property Name="albumsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="images" Type="nvarchar(max)" />
+          <Property Name="vendorID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bookedvenues">
+          <Key>
+            <PropertyRef Name="bookedvenueID" />
+          </Key>
+          <Property Name="bookedvenueID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bookeddate" Type="datetime" Nullable="false" />
+          <Property Name="bookingstatus" Type="bit" Nullable="false" />
+          <Property Name="bookedfoodtype" Type="nvarchar(max)" />
+          <Property Name="venueID" Type="int" Nullable="false" />
+          <Property Name="customerID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="customers">
+          <Key>
+            <PropertyRef Name="customerID" />
+          </Key>
+          <Property Name="customerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customer_Fname" Type="nvarchar(max)" />
+          <Property Name="customer_Lname" Type="nvarchar(max)" />
+          <Property Name="customer_address" Type="nvarchar(max)" />
+          <Property Name="customer_phone" Type="int" Nullable="false" />
+          <Property Name="customer_username" Type="nvarchar(max)" />
+          <Property Name="customer_password" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="FoodItems">
+          <Key>
+            <PropertyRef Name="FoodItemsID" />
+          </Key>
+          <Property Name="FoodItemsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Foodtype" Type="nvarchar(max)" />
+          <Property Name="Cost" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="payments">
+          <Key>
+            <PropertyRef Name="paymentID" />
+          </Key>
+          <Property Name="paymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="payment_date" Type="datetime" Nullable="false" />
+          <Property Name="total_amount" Type="float" Nullable="false" />
+          <Property Name="customerID" Type="int" Nullable="false" />
+          <Property Name="venueID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="photographies">
+          <Key>
+            <PropertyRef Name="photographyID" />
+          </Key>
+          <Property Name="photographyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="photographer_name" Type="nvarchar(max)" />
+          <Property Name="photographer_phone" Type="int" Nullable="false" />
+          <Property Name="photographer_cost" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="reviews">
+          <Key>
+            <PropertyRef Name="reviewID" />
+          </Key>
+          <Property Name="reviewID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="review_content" Type="nvarchar(max)" />
+          <Property Name="review_rating" Type="float" Nullable="false" />
+          <Property Name="customerID" Type="int" Nullable="false" />
+          <Property Name="venueID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vendors">
+          <Key>
+            <PropertyRef Name="vendorID" />
+          </Key>
+          <Property Name="vendorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vendor_Fname" Type="nvarchar(max)" />
+          <Property Name="vendor_Lname" Type="nvarchar(max)" />
+          <Property Name="vendor_address" Type="nvarchar(max)" />
+          <Property Name="vendor_phone" Type="bigint" Nullable="false" />
+          <Property Name="vendor_username" Type="nvarchar(max)" />
+          <Property Name="vendor_password" Type="nvarchar(max)" />
+          <Property Name="vendor_category" Type="nvarchar(max)" />
+          <Property Name="vendor_status" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="venues">
+          <Key>
+            <PropertyRef Name="venueID" />
+          </Key>
+          <Property Name="venueID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="venue_name" Type="nvarchar(max)" />
+          <Property Name="venue_location" Type="nvarchar(max)" />
+          <Property Name="venue_address" Type="nvarchar(max)" />
+          <Property Name="venue_capacity" Type="int" Nullable="false" />
+          <Property Name="venue_category" Type="nvarchar(max)" />
+          <Property Name="venue_video" Type="nvarchar(max)" />
+          <Property Name="venue_status" Type="bit" Nullable="false" />
+          <Property Name="venue_cost" Type="int" Nullable="false" />
+          <Property Name="vendorID" Type="int" Nullable="false" />
+          <Property Name="agentId" Type="int" Nullable="false" />
+          <Property Name="photographyId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_albums_dbo_vendors_vendorID">
+          <End Role="vendors" Type="Self.vendors" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="albums" Type="Self.albums" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vendors">
+              <PropertyRef Name="vendorID" />
+            </Principal>
+            <Dependent Role="albums">
+              <PropertyRef Name="vendorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_bookedvenues_dbo_customers_customerID">
+          <End Role="customers" Type="Self.customers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="bookedvenues" Type="Self.bookedvenues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customers">
+              <PropertyRef Name="customerID" />
+            </Principal>
+            <Dependent Role="bookedvenues">
+              <PropertyRef Name="customerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_bookedvenues_dbo_venues_venueID">
+          <End Role="venues" Type="Self.venues" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="bookedvenues" Type="Self.bookedvenues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="venues">
+              <PropertyRef Name="venueID" />
+            </Principal>
+            <Dependent Role="bookedvenues">
+              <PropertyRef Name="venueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_payments_dbo_customers_customerID">
+          <End Role="customers" Type="Self.customers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="payments" Type="Self.payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customers">
+              <PropertyRef Name="customerID" />
+            </Principal>
+            <Dependent Role="payments">
+              <PropertyRef Name="customerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_payments_dbo_venues_venueID">
+          <End Role="venues" Type="Self.venues" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="payments" Type="Self.payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="venues">
+              <PropertyRef Name="venueID" />
+            </Principal>
+            <Dependent Role="payments">
+              <PropertyRef Name="venueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_reviews_dbo_customers_customerID">
+          <End Role="customers" Type="Self.customers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="reviews" Type="Self.reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customers">
+              <PropertyRef Name="customerID" />
+            </Principal>
+            <Dependent Role="reviews">
+              <PropertyRef Name="customerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_reviews_dbo_venues_venueID">
+          <End Role="venues" Type="Self.venues" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="reviews" Type="Self.reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="venues">
+              <PropertyRef Name="venueID" />
+            </Principal>
+            <Dependent Role="reviews">
+              <PropertyRef Name="venueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_venues_dbo_agents_agentId">
+          <End Role="agents" Type="Self.agents" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="venues" Type="Self.venues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="agents">
+              <PropertyRef Name="agentID" />
+            </Principal>
+            <Dependent Role="venues">
+              <PropertyRef Name="agentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_venues_dbo_photographies_photographyId">
+          <End Role="photographies" Type="Self.photographies" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="venues" Type="Self.venues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="photographies">
+              <PropertyRef Name="photographyID" />
+            </Principal>
+            <Dependent Role="venues">
+              <PropertyRef Name="photographyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_venues_dbo_vendors_vendorID">
+          <End Role="vendors" Type="Self.vendors" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="venues" Type="Self.venues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vendors">
+              <PropertyRef Name="vendorID" />
+            </Principal>
+            <Dependent Role="venues">
+              <PropertyRef Name="vendorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="eventDBModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="agents" EntityType="Self.agents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="albums" EntityType="Self.albums" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="bookedvenues" EntityType="Self.bookedvenues" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customers" EntityType="Self.customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FoodItems" EntityType="Self.FoodItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="payments" EntityType="Self.payments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="photographies" EntityType="Self.photographies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="reviews" EntityType="Self.reviews" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vendors" EntityType="Self.vendors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="venues" EntityType="Self.venues" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_albums_dbo_vendors_vendorID" Association="Self.FK_dbo_albums_dbo_vendors_vendorID">
+            <End Role="vendors" EntitySet="vendors" />
+            <End Role="albums" EntitySet="albums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_bookedvenues_dbo_customers_customerID" Association="Self.FK_dbo_bookedvenues_dbo_customers_customerID">
+            <End Role="customers" EntitySet="customers" />
+            <End Role="bookedvenues" EntitySet="bookedvenues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_bookedvenues_dbo_venues_venueID" Association="Self.FK_dbo_bookedvenues_dbo_venues_venueID">
+            <End Role="venues" EntitySet="venues" />
+            <End Role="bookedvenues" EntitySet="bookedvenues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_payments_dbo_customers_customerID" Association="Self.FK_dbo_payments_dbo_customers_customerID">
+            <End Role="customers" EntitySet="customers" />
+            <End Role="payments" EntitySet="payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_payments_dbo_venues_venueID" Association="Self.FK_dbo_payments_dbo_venues_venueID">
+            <End Role="venues" EntitySet="venues" />
+            <End Role="payments" EntitySet="payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_reviews_dbo_customers_customerID" Association="Self.FK_dbo_reviews_dbo_customers_customerID">
+            <End Role="customers" EntitySet="customers" />
+            <End Role="reviews" EntitySet="reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_reviews_dbo_venues_venueID" Association="Self.FK_dbo_reviews_dbo_venues_venueID">
+            <End Role="venues" EntitySet="venues" />
+            <End Role="reviews" EntitySet="reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_venues_dbo_agents_agentId" Association="Self.FK_dbo_venues_dbo_agents_agentId">
+            <End Role="agents" EntitySet="agents" />
+            <End Role="venues" EntitySet="venues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_venues_dbo_photographies_photographyId" Association="Self.FK_dbo_venues_dbo_photographies_photographyId">
+            <End Role="photographies" EntitySet="photographies" />
+            <End Role="venues" EntitySet="venues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_venues_dbo_vendors_vendorID" Association="Self.FK_dbo_venues_dbo_vendors_vendorID">
+            <End Role="vendors" EntitySet="vendors" />
+            <End Role="venues" EntitySet="venues" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="eventDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="agent">
+          <Key>
+            <PropertyRef Name="agentID" />
+          </Key>
+          <Property Name="agentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="agent_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="agent_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="agent_phone" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="venues" Relationship="Self.FK_dbo_venues_dbo_agents_agentId" FromRole="agents" ToRole="venues" />
+        </EntityType>
+        <EntityType Name="album">
+          <Key>
+            <PropertyRef Name="albumsID" />
+          </Key>
+          <Property Name="albumsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="images" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="vendorID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="vendor" Relationship="Self.FK_dbo_albums_dbo_vendors_vendorID" FromRole="albums" ToRole="vendors" />
+        </EntityType>
+        <EntityType Name="bookedvenue">
+          <Key>
+            <PropertyRef Name="bookedvenueID" />
+          </Key>
+          <Property Name="bookedvenueID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bookeddate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="bookingstatus" Type="Boolean" Nullable="false" />
+          <Property Name="bookedfoodtype" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="venueID" Type="Int32" Nullable="false" />
+          <Property Name="customerID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="customer" Relationship="Self.FK_dbo_bookedvenues_dbo_customers_customerID" FromRole="bookedvenues" ToRole="customers" />
+          <NavigationProperty Name="venue" Relationship="Self.FK_dbo_bookedvenues_dbo_venues_venueID" FromRole="bookedvenues" ToRole="venues" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="customerID" />
+          </Key>
+          <Property Name="customerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customer_Fname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="customer_Lname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="customer_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="customer_phone" Type="Int32" Nullable="false" />
+          <Property Name="customer_username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="customer_password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="bookedvenues" Relationship="Self.FK_dbo_bookedvenues_dbo_customers_customerID" FromRole="customers" ToRole="bookedvenues" />
+          <NavigationProperty Name="payments" Relationship="Self.FK_dbo_payments_dbo_customers_customerID" FromRole="customers" ToRole="payments" />
+          <NavigationProperty Name="reviews" Relationship="Self.FK_dbo_reviews_dbo_customers_customerID" FromRole="customers" ToRole="reviews" />
+        </EntityType>
+        <EntityType Name="FoodItem">
+          <Key>
+            <PropertyRef Name="FoodItemsID" />
+          </Key>
+          <Property Name="FoodItemsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Foodtype" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="payment">
+          <Key>
+            <PropertyRef Name="paymentID" />
+          </Key>
+          <Property Name="paymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="payment_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="total_amount" Type="Double" Nullable="false" />
+          <Property Name="customerID" Type="Int32" Nullable="false" />
+          <Property Name="venueID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="customer" Relationship="Self.FK_dbo_payments_dbo_customers_customerID" FromRole="payments" ToRole="customers" />
+          <NavigationProperty Name="venue" Relationship="Self.FK_dbo_payments_dbo_venues_venueID" FromRole="payments" ToRole="venues" />
+        </EntityType>
+        <EntityType Name="photography">
+          <Key>
+            <PropertyRef Name="photographyID" />
+          </Key>
+          <Property Name="photographyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="photographer_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="photographer_phone" Type="Int32" Nullable="false" />
+          <Property Name="photographer_cost" Type="Double" Nullable="false" />
+          <NavigationProperty Name="venues" Relationship="Self.FK_dbo_venues_dbo_photographies_photographyId" FromRole="photographies" ToRole="venues" />
+        </EntityType>
+        <EntityType Name="review">
+          <Key>
+            <PropertyRef Name="reviewID" />
+          </Key>
+          <Property Name="reviewID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="review_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="review_rating" Type="Double" Nullable="false" />
+          <Property Name="customerID" Type="Int32" Nullable="false" />
+          <Property Name="venueID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="customer" Relationship="Self.FK_dbo_reviews_dbo_customers_customerID" FromRole="reviews" ToRole="customers" />
+          <NavigationProperty Name="venue" Relationship="Self.FK_dbo_reviews_dbo_venues_venueID" FromRole="reviews" ToRole="venues" />
+        </EntityType>
+        <EntityType Name="vendor">
+          <Key>
+            <PropertyRef Name="vendorID" />
+          </Key>
+          <Property Name="vendorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vendor_Fname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="vendor_Lname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="vendor_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="vendor_phone" Type="Int64" Nullable="false" />
+          <Property Name="vendor_username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="vendor_password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="vendor_category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="vendor_status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="albums" Relationship="Self.FK_dbo_albums_dbo_vendors_vendorID" FromRole="vendors" ToRole="albums" />
+          <NavigationProperty Name="venues" Relationship="Self.FK_dbo_venues_dbo_vendors_vendorID" FromRole="vendors" ToRole="venues" />
+        </EntityType>
+        <EntityType Name="venue">
+          <Key>
+            <PropertyRef Name="venueID" />
+          </Key>
+          <Property Name="venueID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="venue_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="venue_location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="venue_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="venue_capacity" Type="Int32" Nullable="false" />
+          <Property Name="venue_category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="venue_video" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="venue_status" Type="Boolean" Nullable="false" />
+          <Property Name="venue_cost" Type="Int32" Nullable="false" />
+          <Property Name="vendorID" Type="Int32" Nullable="false" />
+          <Property Name="agentId" Type="Int32" Nullable="false" />
+          <Property Name="photographyId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="agent" Relationship="Self.FK_dbo_venues_dbo_agents_agentId" FromRole="venues" ToRole="agents" />
+          <NavigationProperty Name="bookedvenues" Relationship="Self.FK_dbo_bookedvenues_dbo_venues_venueID" FromRole="venues" ToRole="bookedvenues" />
+          <NavigationProperty Name="payments" Relationship="Self.FK_dbo_payments_dbo_venues_venueID" FromRole="venues" ToRole="payments" />
+          <NavigationProperty Name="photography" Relationship="Self.FK_dbo_venues_dbo_photographies_photographyId" FromRole="venues" ToRole="photographies" />
+          <NavigationProperty Name="reviews" Relationship="Self.FK_dbo_reviews_dbo_venues_venueID" FromRole="venues" ToRole="reviews" />
+          <NavigationProperty Name="vendor" Relationship="Self.FK_dbo_venues_dbo_vendors_vendorID" FromRole="venues" ToRole="vendors" />
+        </EntityType>
+        <Association Name="FK_dbo_venues_dbo_agents_agentId">
+          <End Role="agents" Type="Self.agent" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="venues" Type="Self.venue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="agents">
+              <PropertyRef Name="agentID" />
+            </Principal>
+            <Dependent Role="venues">
+              <PropertyRef Name="agentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_albums_dbo_vendors_vendorID">
+          <End Role="vendors" Type="Self.vendor" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="albums" Type="Self.album" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vendors">
+              <PropertyRef Name="vendorID" />
+            </Principal>
+            <Dependent Role="albums">
+              <PropertyRef Name="vendorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_bookedvenues_dbo_customers_customerID">
+          <End Role="customers" Type="Self.customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="bookedvenues" Type="Self.bookedvenue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customers">
+              <PropertyRef Name="customerID" />
+            </Principal>
+            <Dependent Role="bookedvenues">
+              <PropertyRef Name="customerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_bookedvenues_dbo_venues_venueID">
+          <End Role="venues" Type="Self.venue" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="bookedvenues" Type="Self.bookedvenue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="venues">
+              <PropertyRef Name="venueID" />
+            </Principal>
+            <Dependent Role="bookedvenues">
+              <PropertyRef Name="venueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_payments_dbo_customers_customerID">
+          <End Role="customers" Type="Self.customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="payments" Type="Self.payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customers">
+              <PropertyRef Name="customerID" />
+            </Principal>
+            <Dependent Role="payments">
+              <PropertyRef Name="customerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_reviews_dbo_customers_customerID">
+          <End Role="customers" Type="Self.customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="reviews" Type="Self.review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customers">
+              <PropertyRef Name="customerID" />
+            </Principal>
+            <Dependent Role="reviews">
+              <PropertyRef Name="customerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_payments_dbo_venues_venueID">
+          <End Role="venues" Type="Self.venue" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="payments" Type="Self.payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="venues">
+              <PropertyRef Name="venueID" />
+            </Principal>
+            <Dependent Role="payments">
+              <PropertyRef Name="venueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_venues_dbo_photographies_photographyId">
+          <End Role="photographies" Type="Self.photography" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="venues" Type="Self.venue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="photographies">
+              <PropertyRef Name="photographyID" />
+            </Principal>
+            <Dependent Role="venues">
+              <PropertyRef Name="photographyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_reviews_dbo_venues_venueID">
+          <End Role="venues" Type="Self.venue" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="reviews" Type="Self.review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="venues">
+              <PropertyRef Name="venueID" />
+            </Principal>
+            <Dependent Role="reviews">
+              <PropertyRef Name="venueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_venues_dbo_vendors_vendorID">
+          <End Role="vendors" Type="Self.vendor" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="venues" Type="Self.venue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vendors">
+              <PropertyRef Name="vendorID" />
+            </Principal>
+            <Dependent Role="venues">
+              <PropertyRef Name="vendorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="eventDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="agents" EntityType="Self.agent" />
+          <EntitySet Name="albums" EntityType="Self.album" />
+          <EntitySet Name="bookedvenues" EntityType="Self.bookedvenue" />
+          <EntitySet Name="customers" EntityType="Self.customer" />
+          <EntitySet Name="FoodItems" EntityType="Self.FoodItem" />
+          <EntitySet Name="payments" EntityType="Self.payment" />
+          <EntitySet Name="photographies" EntityType="Self.photography" />
+          <EntitySet Name="reviews" EntityType="Self.review" />
+          <EntitySet Name="vendors" EntityType="Self.vendor" />
+          <EntitySet Name="venues" EntityType="Self.venue" />
+          <AssociationSet Name="FK_dbo_venues_dbo_agents_agentId" Association="Self.FK_dbo_venues_dbo_agents_agentId">
+            <End Role="agents" EntitySet="agents" />
+            <End Role="venues" EntitySet="venues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_albums_dbo_vendors_vendorID" Association="Self.FK_dbo_albums_dbo_vendors_vendorID">
+            <End Role="vendors" EntitySet="vendors" />
+            <End Role="albums" EntitySet="albums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_bookedvenues_dbo_customers_customerID" Association="Self.FK_dbo_bookedvenues_dbo_customers_customerID">
+            <End Role="customers" EntitySet="customers" />
+            <End Role="bookedvenues" EntitySet="bookedvenues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_bookedvenues_dbo_venues_venueID" Association="Self.FK_dbo_bookedvenues_dbo_venues_venueID">
+            <End Role="venues" EntitySet="venues" />
+            <End Role="bookedvenues" EntitySet="bookedvenues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_payments_dbo_customers_customerID" Association="Self.FK_dbo_payments_dbo_customers_customerID">
+            <End Role="customers" EntitySet="customers" />
+            <End Role="payments" EntitySet="payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_reviews_dbo_customers_customerID" Association="Self.FK_dbo_reviews_dbo_customers_customerID">
+            <End Role="customers" EntitySet="customers" />
+            <End Role="reviews" EntitySet="reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_payments_dbo_venues_venueID" Association="Self.FK_dbo_payments_dbo_venues_venueID">
+            <End Role="venues" EntitySet="venues" />
+            <End Role="payments" EntitySet="payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_venues_dbo_photographies_photographyId" Association="Self.FK_dbo_venues_dbo_photographies_photographyId">
+            <End Role="photographies" EntitySet="photographies" />
+            <End Role="venues" EntitySet="venues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_reviews_dbo_venues_venueID" Association="Self.FK_dbo_reviews_dbo_venues_venueID">
+            <End Role="venues" EntitySet="venues" />
+            <End Role="reviews" EntitySet="reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_venues_dbo_vendors_vendorID" Association="Self.FK_dbo_venues_dbo_vendors_vendorID">
+            <End Role="vendors" EntitySet="vendors" />
+            <End Role="venues" EntitySet="venues" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="eventDBModelStoreContainer" CdmEntityContainer="eventDBEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="eventDBModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="eventDBModel.Admin">
+              <MappingFragment StoreEntitySet="Admins">
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="agents">
+            <EntityTypeMapping TypeName="eventDBModel.agent">
+              <MappingFragment StoreEntitySet="agents">
+                <ScalarProperty Name="agentID" ColumnName="agentID" />
+                <ScalarProperty Name="agent_name" ColumnName="agent_name" />
+                <ScalarProperty Name="agent_email" ColumnName="agent_email" />
+                <ScalarProperty Name="agent_phone" ColumnName="agent_phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="albums">
+            <EntityTypeMapping TypeName="eventDBModel.album">
+              <MappingFragment StoreEntitySet="albums">
+                <ScalarProperty Name="albumsID" ColumnName="albumsID" />
+                <ScalarProperty Name="images" ColumnName="images" />
+                <ScalarProperty Name="vendorID" ColumnName="vendorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bookedvenues">
+            <EntityTypeMapping TypeName="eventDBModel.bookedvenue">
+              <MappingFragment StoreEntitySet="bookedvenues">
+                <ScalarProperty Name="bookedvenueID" ColumnName="bookedvenueID" />
+                <ScalarProperty Name="bookeddate" ColumnName="bookeddate" />
+                <ScalarProperty Name="bookingstatus" ColumnName="bookingstatus" />
+                <ScalarProperty Name="bookedfoodtype" ColumnName="bookedfoodtype" />
+                <ScalarProperty Name="venueID" ColumnName="venueID" />
+                <ScalarProperty Name="customerID" ColumnName="customerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="eventDBModel.customer">
+              <MappingFragment StoreEntitySet="customers">
+                <ScalarProperty Name="customerID" ColumnName="customerID" />
+                <ScalarProperty Name="customer_Fname" ColumnName="customer_Fname" />
+                <ScalarProperty Name="customer_Lname" ColumnName="customer_Lname" />
+                <ScalarProperty Name="customer_address" ColumnName="customer_address" />
+                <ScalarProperty Name="customer_phone" ColumnName="customer_phone" />
+                <ScalarProperty Name="customer_username" ColumnName="customer_username" />
+                <ScalarProperty Name="customer_password" ColumnName="customer_password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FoodItems">
+            <EntityTypeMapping TypeName="eventDBModel.FoodItem">
+              <MappingFragment StoreEntitySet="FoodItems">
+                <ScalarProperty Name="FoodItemsID" ColumnName="FoodItemsID" />
+                <ScalarProperty Name="Foodtype" ColumnName="Foodtype" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="payments">
+            <EntityTypeMapping TypeName="eventDBModel.payment">
+              <MappingFragment StoreEntitySet="payments">
+                <ScalarProperty Name="paymentID" ColumnName="paymentID" />
+                <ScalarProperty Name="payment_date" ColumnName="payment_date" />
+                <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+                <ScalarProperty Name="customerID" ColumnName="customerID" />
+                <ScalarProperty Name="venueID" ColumnName="venueID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="photographies">
+            <EntityTypeMapping TypeName="eventDBModel.photography">
+              <MappingFragment StoreEntitySet="photographies">
+                <ScalarProperty Name="photographyID" ColumnName="photographyID" />
+                <ScalarProperty Name="photographer_name" ColumnName="photographer_name" />
+                <ScalarProperty Name="photographer_phone" ColumnName="photographer_phone" />
+                <ScalarProperty Name="photographer_cost" ColumnName="photographer_cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="reviews">
+            <EntityTypeMapping TypeName="eventDBModel.review">
+              <MappingFragment StoreEntitySet="reviews">
+                <ScalarProperty Name="reviewID" ColumnName="reviewID" />
+                <ScalarProperty Name="review_content" ColumnName="review_content" />
+                <ScalarProperty Name="review_rating" ColumnName="review_rating" />
+                <ScalarProperty Name="customerID" ColumnName="customerID" />
+                <ScalarProperty Name="venueID" ColumnName="venueID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vendors">
+            <EntityTypeMapping TypeName="eventDBModel.vendor">
+              <MappingFragment StoreEntitySet="vendors">
+                <ScalarProperty Name="vendorID" ColumnName="vendorID" />
+                <ScalarProperty Name="vendor_Fname" ColumnName="vendor_Fname" />
+                <ScalarProperty Name="vendor_Lname" ColumnName="vendor_Lname" />
+                <ScalarProperty Name="vendor_address" ColumnName="vendor_address" />
+                <ScalarProperty Name="vendor_phone" ColumnName="vendor_phone" />
+                <ScalarProperty Name="vendor_username" ColumnName="vendor_username" />
+                <ScalarProperty Name="vendor_password" ColumnName="vendor_password" />
+                <ScalarProperty Name="vendor_category" ColumnName="vendor_category" />
+                <ScalarProperty Name="vendor_status" ColumnName="vendor_status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="venues">
+            <EntityTypeMapping TypeName="eventDBModel.venue">
+              <MappingFragment StoreEntitySet="venues">
+                <ScalarProperty Name="venueID" ColumnName="venueID" />
+                <ScalarProperty Name="venue_name" ColumnName="venue_name" />
+                <ScalarProperty Name="venue_location" ColumnName="venue_location" />
+                <ScalarProperty Name="venue_address" ColumnName="venue_address" />
+                <ScalarProperty Name="venue_capacity" ColumnName="venue_capacity" />
+                <ScalarProperty Name="venue_category" ColumnName="venue_category" />
+                <ScalarProperty Name="venue_video" ColumnName="venue_video" />
+                <ScalarProperty Name="venue_status" ColumnName="venue_status" />
+                <ScalarProperty Name="venue_cost" ColumnName="venue_cost" />
+                <ScalarProperty Name="vendorID" ColumnName="vendorID" />
+                <ScalarProperty Name="agentId" ColumnName="agentId" />
+                <ScalarProperty Name="photographyId" ColumnName="photographyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

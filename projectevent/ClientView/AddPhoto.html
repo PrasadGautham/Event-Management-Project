@@ -1,0 +1,43 @@
+﻿<div>
+    <form class="form-horizontal" name="AddPhoto">
+        <div class="form-group">
+            <label class="col-lg-2 control-label"> Photographer Name</label>
+            <div class="col-lg-10">
+                <input type="text" name="Photographername" ng-model="photo.photographer_name" required class="form-control" placeholder="Enter Photographer Name" />
+                <span ng-show="(AddPhoto.Photographername.$dirty && AddPhoto.Photographername.$invalid)">
+                    <span class="alert-danger" ng-show="AddPhoto.Photographername.$error.required">
+                        Photographer Name is required
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label"> Photographer PhoneNo</label>
+            <div class="col-lg-10">
+                <input type="number" name="PhotographerPhone" ng-model="photo.photographer_phone" required class="form-control" placeholder="Enter Photographer phone" />
+                <span ng-show="(AddPhoto.PhotographerPhone.$dirty && AddPhoto.PhotographerPhone.$invalid)">
+                    <span class="alert-danger" ng-show="AddPhoto.PhotographerPhone.$error.required">
+                        Photographer Number is required
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label"> Photography Cost</label>
+            <div class="col-lg-10">
+                <input type="number" name="PhotographyCost" ng-model="photo.photographer_cost" required class="form-control" placeholder="Enter cost" />
+                <span ng-show="(AddPhoto.PhotographyCost.$dirty && AddPhoto.PhotographyCost.$invalid)">
+                    <span class="alert-danger" ng-show="AddPhoto.PhotographyCost.$error.required">
+                        Photography Cost is required
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-default">Cancel</a>
+            <a class="btn btn-primary" ng-hide="AddPhoto.photographer_name.$error.required" ng-click="addPhoto(photo)">Save</a>
+        </div>
+    </form>
+</div>
+
+

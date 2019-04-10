@@ -1,0 +1,35 @@
+﻿<div ng-init="getvendorbyid(idvendor)">
+    <div>
+        <button><a href="#vendorhmpage">Back</a></button>
+
+    </div>
+    <center>
+        <div span="height=300">
+            <h1>Vendor Profile</h1>
+        </div>
+
+        
+
+
+        <table border="1" span="backgroundcolor:green " cellspacing="50 " cellpadding="20">-->
+
+            
+            
+
+            <tr><th>FirstName</th><th>LastName</th><th>Address</th><th>Category</th></tr>
+            <tr ng-repeat="p in Vendor">
+                <td><span ng-bind="p.vendor_Fname" style:"box-shadow"></span></td>
+                <td><span ng-bind="p.vendor_Lname" style:"box-shadow"></span></td>
+                <td><span ng-bind="p.vendor_address" style:"box-shadow"></span></td>
+
+                <td><span ng-bind="p.vendor_category" style:"box-shadow"></span></td>
+
+
+
+            </tr>
+        </table>
+  
+    </center>
+</div>
+
+

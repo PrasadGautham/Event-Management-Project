@@ -1,0 +1,42 @@
+﻿<div>
+    <form class="form-horizontal" name="EditAgent" ng-init="init()">
+        <div class="form-group">
+            <label class="col-lg-2 control-label"> Agent Name</label>
+            <div class="col-lg-10">
+                <input type="text" name="agentname" ng-model="agent.agent_name" required class="form-control" placeholder="Enter Agent Name" />
+                <span ng-show="(EditAgent.agentname.$dirty && EditAgent.agentname.$invalid)">
+                    <span class="alert-danger" ng-show="EditAgent.agentname.$error.required">
+                        Agent Name is required
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label"> Agent EMail</label>
+            <div class="col-lg-10">
+                <input type="email" name="agentemail" ng-model="agent.agent_email" required class="form-control" placeholder="Enter Agent EMail" />
+                <span ng-show="(EditAgent.agentemail.$dirty && EditAgent.agentemail.$invalid)">
+                    <span class="alert-danger" ng-show="EditAgent.agentemail.$error.required">
+                        Agent EMail is required
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label"> Agent PhoneNo</label>
+            <div class="col-lg-10">
+                <input type="number" name="agentphone" ng-model="agent.agent_phone" required class="form-control" placeholder="Enter Agent Phone" />
+                <span ng-show="(EditAgent.agentphone.$dirty && EditAgent.agentphone.$invalid)">
+                    <span class="alert-danger" ng-show="EditAgent.agentphone.$error.required">
+                        Agent Phone is required
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-default">Cancel</a>
+            <a class="btn btn-primary" ng-hide="EditAgent.agentemail.$error.required" ng-click="UpdateAgent(agent)">Save</a>
+        </div>
+    </form>
+</div>
+

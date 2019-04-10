@@ -1,0 +1,53 @@
+﻿
+<div>
+    <br />
+    <br />
+ 
+    <div id="main" ng-repeat="ven in selectedvenue">
+
+        <h2 class="col-lg-2">Booking Venue Details</h2>
+        <p id="text">
+            <label class="col-lg-2 control-label">BOOKED venue name :{{ven.venue_name}}</label>
+            <br />
+            <label class="col-lg-2 control-label">BOOK DATE :{{dates}}</label><br />
+            <label class="col-lg-2 control-label">COST :{{ven.venue_cost}}</label><br />
+            <input type="checkbox" class="checkbox" /><label class="col-lg-2 control-label"> Photograhpy</label>
+            <input type="checkbox" class="checkbox" /><label class="col-lg-2 control-label"> Catering</label>
+            {{ven.venueID}}
+            <br />
+            <input type="hidden" ng-init="{{dates}}" ng-model="book.bookeddate"/>
+            <input type="hidden" ng-init="false" ng-model="book.bookingstatus"/>
+            <input type="hidden" ng-init="{{ven.venueID}}" ng-model="book.venueID" />
+
+        </p>
+
+    </div>
+    </div>
+    <div>
+     <h2 class="col-lg-2"> SERVICE Details</h2>
+    
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Foodtype</label>
+            <div class="col-lg-10">
+                <input type="text"  ng-model="book.bookedfoodtype"  placeholder="Food Code" />
+                <input type="hidden" ng-init="1" ng-model="book.customerID" />
+
+                
+            </div>
+        </div><br/>
+        Download : <a href="content/food.pdf"> Food Catering Document </a>
+
+       <br/>
+         
+        <br/>
+       
+</div>
+
+<div class="form-group">
+    <div>
+
+        <a class="btn btn-primary" ng-click="bookdata(book)">Book Now</a>
+    </div>
+  
+</div>
+    

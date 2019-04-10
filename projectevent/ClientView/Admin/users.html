@@ -1,0 +1,73 @@
+﻿<div>
+    <table id="simple-table" class="table table-striped table-bordered table-hover">
+
+        <tr>
+            <th>
+                Customer &nbsp; &nbsp; &nbsp;
+
+            </th>
+            <th>
+                Address&nbsp; &nbsp; &nbsp;
+            </th>
+            <th>
+                Phone &nbsp; &nbsp; &nbsp;
+
+
+            </th>
+            <th>
+                Booking Date &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+                &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+            </th>
+            <th>
+                Approved &nbsp; &nbsp; &nbsp;
+
+            </th>
+            <th>
+                Concerned Agent&nbsp;  &nbsp; &nbsp;
+
+
+
+            </th>
+            <th>
+                Agent email &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+
+
+            </th>
+            <th>
+                Venue &nbsp; &nbsp; &nbsp;
+
+
+
+            </th>
+            <th>
+                Concerned Vendor &nbsp; &nbsp; &nbsp;
+
+
+
+            </th>
+
+
+        </tr>
+
+        <tr ng-repeat="a in customers">
+            <td><span ng-bind="a.customer_username"></span></td>
+            <td><span ng-bind="a.customer_address"></span></td>
+            <td><span ng-bind="a.customer_phone"></span></td>
+            <td><span ng-bind="a.bookeddate"></span></td>
+            <td><span ng-bind="a.bookingstatus"></span></td>
+            <td><span ng-bind="a.agent_name"></span></td>
+            <td><span ng-bind="a.agent_email"></span></td>
+            <td><span ng-bind="a.venue_name"></span></td>
+            <td><span ng-bind="a.vendor_username"></span></td>
+            <!--<td><input type="button" value="Accept" ng-click="acceptvendors(a.vendorID)" ng-hide="acceptkeyvisibleornot(a.vendor_status)"></td>
+            <td><input type="button" value="Remove" ng-click="deletevendors(a.vendorID)"></td>-->
+
+
+        </tr>
+    </table>
+</div>
+

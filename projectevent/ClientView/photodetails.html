@@ -1,0 +1,34 @@
+﻿<div>
+    <div>
+        <button><a href="#vendorhmpage">Back</a></button>
+
+    </div>
+    <center>
+        <div>
+
+        </div>
+
+        <div>
+            <a href="#photoadd" class="btn btn-primary"> Add New Photographer </a>
+        </div>
+
+
+        <div span="height=300">
+            <h1>Photographer Details</h1>
+        </div>
+
+        <table border="1" cellspacing="3" cellpadding="2">
+            <tr><th>Name</th><th>ContactNo</th><th>PhotographyCost</th></tr>
+            <tr ng-repeat="p in Photo">
+
+                <td><span ng-bind="p.photographer_name" style:"box-shadow"></span></td>
+                <td><span ng-bind="p.photographer_phone" style:"box-shadow"></span></td>
+                <td><span ng-bind="p.photographer_cost" style:"box-shadow"></span></td>
+                <td><a href="#ModifyPhoto/{{p.photographyID}}" class="btn btn-info">Edit</a></td>
+                <td><a ng-click="deletePhoto(p.photographyID)" class="btn btn-info">Delete</a></td>
+
+            </tr>
+        </table>
+    </center>
+</div>
+
